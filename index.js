@@ -12,7 +12,7 @@ const api = new telegram({
     token: token,
     // polling: true,
     webHook: {
-        port: 3000
+        port: 80
     }
 //     updates: {
 //         enabled: true
@@ -40,8 +40,8 @@ rou.post('/bot', ctx => {
 app.use(bodyParser());
 app.use(rou.routes());
 
-app.listen(3000, () => {
-    console.log('listing on port: 3000')
+app.listen(80, () => {
+    console.log('listing on port: 80')
 })
 
 
