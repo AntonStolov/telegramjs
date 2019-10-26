@@ -7,12 +7,13 @@ const bodyParser = require('koa-bodyparser')
 const token = '385017512:AAHrISO0n6qaEcYbZq9utTdT8PqWLZw3Y7A';
 const mongoURL = 'mongodb+srv://anton:<0000>@cluster0-1fvmc.mongodb.net/telegramBot?retryWrites=true&w=majority';
 const webHookUrl = 'https://telegramantonjs.herokuapp.com';
+const PORT = process.env.PORT;
 
 const api = new telegram({
     token: token,
     // polling: true,
     webHook: {
-        port: 4000
+        port: PORT
     }
 //     updates: {
 //         enabled: true
@@ -40,8 +41,8 @@ rou.post('', ctx => {
 app.use(bodyParser());
 app.use(rou.routes());
 
-app.listen(4000, () => {
-    console.log('listing on port: 4000')
+app.listen(PORT, () => {
+    console.log(`listing on port: ${PORT}`)
 })
 
 
