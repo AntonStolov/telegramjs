@@ -12,7 +12,7 @@ const api = new telegram({
     token: token,
     // polling: true,
     webHook: {
-        port: 80
+        port: 4000
     }
 //     updates: {
 //         enabled: true
@@ -21,13 +21,13 @@ const api = new telegram({
 
 // api.setWebhook(`${webHookUrl}/bot`);
 api.setWebhook({
-    url: `${webHookUrl}/bot`,
+    url: `${webHookUrl}`,
 });
 
 const app = new koa();
 const rou = new router();
 
-rou.post('/bot', ctx => {
+rou.post('', ctx => {
     const { body } = ctx.request;
     console.log(body);
     api.sendMessage(
@@ -40,8 +40,8 @@ rou.post('/bot', ctx => {
 app.use(bodyParser());
 app.use(rou.routes());
 
-app.listen(80, () => {
-    console.log('listing on port: 80')
+app.listen(4000, () => {
+    console.log('listing on port: 4000')
 })
 
 
