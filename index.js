@@ -9,7 +9,7 @@ const sendQuery = require('./sendToMongo')
 
 // const token = '385017512:AAHrISO0n6qaEcYbZq9utTdT8PqWLZw3Y7A';
 // const mongoURL = `mongodb+srv://anton:<${PASSWORD}>@cluster0-1fvmc.mongodb.net/telegrambot?retryWrites=true&w=majority`;
-const webHookUrl = 'https://622b7d90.ngrok.io';
+const webHookUrl = 'https://telegramantonjs.herokuapp.com';
 // const PORT = process.env.PORT;
 
 const api = new telegram({
